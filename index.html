@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jerusalén - Sistema de Cotización Inteligente</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <div class="nav__brand">
+        <span class="nav__icon">⬡</span>
+        <span class="nav__name">JERUSALÉN</span>
+        <span class="nav__tag">Sistema Web</span>
+      </div>
+      <ul class="nav__links">
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#modulos">Módulos</a></li>
+        <li><a href="#tecnologias">Tecnologías</a></li>
+        <li><a href="#arquitectura">Arquitectura</a></li>
+        <li><a href="#contacto" class="nav__cta">Ver Sistema</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg">
+      <div class="hero__grid"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <canvas id="particles"></canvas>
+    </div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="badge__dot"></span>
+        Hito 4 — Sistema Desplegado en Producción
+      </div>
+      <h1 class="hero__title">
+        Cotizaciones de<br />
+        <span class="hero__accent">Construcción</span><br />
+        impulsadas por IA
+      </h1>
+      <p class="hero__desc">
+        Sistema web inteligente para la Empresa <strong>Jerusalén</strong> — El Alto, Bolivia.<br />
+        Automatiza presupuestos, predice precios y recomienda materiales<br />
+        con Machine Learning en tiempo real.
+      </p>
+      <div class="hero__actions">
+        <a href="#modulos" class="btn btn--primary">Explorar Módulos</a>
+        <a href="#arquitectura" class="btn btn--ghost">Ver Arquitectura</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num">98%</span>
+          <span class="stat__label">Disponibilidad</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">&lt;3s</span>
+          <span class="stat__label">Respuesta IA</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">70%+</span>
+          <span class="stat__label">Precisión Modelo</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">10K</span>
+          <span class="stat__label">Productos</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Deslizar</span>
+      <div class="scroll__line"></div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="problema" id="problema">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">01 / Problema</span>
+        <h2 class="section__title">El reto que resolvemos</h2>
+        <p class="section__sub">La Empresa Jerusalén operaba con procesos manuales que generaban pérdidas de eficiencia y clientes.</p>
+      </div>
+      <div class="problema__grid">
+        <div class="problema__card reveal">
+          <div class="pcard__icon">📋</div>
+          <h3>Cotización Manual</h3>
+          <p>Presupuestos calculados a mano en 15–20 minutos con precios desactualizados que no reflejaban la volatilidad del mercado.</p>
+          <div class="pcard__arrow">→ Ahora: segundos</div>
+        </div>
+        <div class="problema__card reveal" style="--d:.1s">
+          <div class="pcard__icon">📦</div>
+          <h3>Inventario Descontrolado</h3>
+          <p>Hojas de cálculo no sincronizadas causaban inexactitud en el stock y desabastecimiento de materiales de alta rotación.</p>
+          <div class="pcard__arrow">→ Ahora: tiempo real</div>
+        </div>
+        <div class="problema__card reveal" style="--d:.2s">
+          <div class="pcard__icon">📉</div>
+          <h3>Sin Datos Históricos</h3>
+          <p>Ausencia de registros estructurados impedía identificar tendencias de precios y optimizar márgenes frente a la inflación.</p>
+          <div class="pcard__arrow">→ Ahora: ML predictivo</div>
+        </div>
+        <div class="problema__card reveal" style="--d:.3s">
+          <div class="pcard__icon">🌐</div>
+          <h3>Sin Plataforma Digital</h3>
+          <p>La empresa carecía de presencia web transaccional, limitando su escalabilidad y competitividad en el mercado regional.</p>
+          <div class="pcard__arrow">→ Ahora: web 24/7</div>
+        </div>
+      </div>
+      <div class="pregunta reveal">
+        <span class="pregunta__label">Pregunta Esencial (ABR)</span>
+        <blockquote class="pregunta__text">
+          "¿Cómo puede un sistema web inteligente, fundamentado en Machine Learning, automatizar el proceso de cotización de materiales de construcción para reducir errores, mejorar la experiencia del cliente y fortalecer la competitividad de la Empresa Jerusalén?"
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULOS -->
+  <section class="modulos" id="modulos">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">02 / Módulos</span>
+        <h2 class="section__title">4 Módulos del Sistema</h2>
+        <p class="section__sub">Cada módulo cubre un área crítica del negocio con tecnología de punta.</p>
+      </div>
+      <div class="modulos__grid">
+
+        <div class="modulo reveal">
+          <div class="modulo__num">MIA</div>
+          <div class="modulo__header">
+            <div class="modulo__icon">🧠</div>
+            <h3>Inteligencia Analítica</h3>
+          </div>
+          <ul class="modulo__list">
+            <li>Preprocesamiento de datos históricos</li>
+            <li>Modelo de regresión con Scikit-Learn</li>
+            <li>Predicción de precios de materiales</li>
+            <li>Similitud de coseno para recomendaciones</li>
+            <li>Visualización de tendencias</li>
+          </ul>
+          <div class="modulo__tech">Python · Scikit-Learn</div>
+        </div>
+
+        <div class="modulo reveal" style="--d:.1s">
+          <div class="modulo__num">MIG</div>
+          <div class="modulo__header">
+            <div class="modulo__icon">📦</div>
+            <h3>Gestión de Inventario</h3>
+          </div>
+          <ul class="modulo__list">
+            <li>Registro de SKUs y materiales</li>
+            <li>Control de mermas y stock crítico</li>
+            <li>Carga masiva vía CSV/Excel</li>
+            <li>Alertas automáticas de reabastecimiento</li>
+            <li>Gestión de proveedores</li>
+          </ul>
+          <div class="modulo__tech">PostgreSQL · PHP</div>
+        </div>
+
+        <div class="modulo reveal" style="--d:.2s">
+          <div class="modulo__num">MCC</div>
+          <div class="modulo__header">
+            <div class="modulo__icon">📄</div>
+            <h3>Cotización Dinámica</h3>
+          </div>
+          <ul class="modulo__list">
+            <li>Carrito de selección de materiales</li>
+            <li>Cálculo con tasas impositivas (IVA, IT)</li>
+            <li>Exportación de cotizaciones en PDF</li>
+            <li>Envío vía API de WhatsApp Web</li>
+            <li>Historial de presupuestos</li>
+          </ul>
+          <div class="modulo__tech">ReportLab · WhatsApp API</div>
+        </div>
+
+        <div class="modulo reveal" style="--d:.3s">
+          <div class="modulo__num">MASS</div>
+          <div class="modulo__header">
+            <div class="modulo__icon">🔐</div>
+            <h3>Administración y Seguridad</h3>
+          </div>
+          <ul class="modulo__list">
+            <li>Control de acceso por roles (RBAC)</li>
+            <li>Encriptación bcrypt de credenciales</li>
+            <li>Registro de logs de auditoría</li>
+            <li>Gestión de sesiones con tokens</li>
+            <li>Respaldos semanales automatizados</li>
+          </ul>
+          <div class="modulo__tech">JWT · bcrypt · PostgreSQL</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUISITOS -->
+  <section class="requisitos" id="requisitos">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">03 / Requisitos</span>
+        <h2 class="section__title">Matriz MoSCoW</h2>
+        <p class="section__sub">Priorización del MVP del sistema basada en valor de negocio.</p>
+      </div>
+      <div class="moscow__grid">
+        <div class="moscow__col moscow--must reveal">
+          <div class="moscow__label">MUST HAVE</div>
+          <ul>
+            <li>Autenticación con roles ADMIN/VEN</li>
+            <li>Gestión CRUD de inventario</li>
+            <li>Generación de cotización PDF</li>
+          </ul>
+        </div>
+        <div class="moscow__col moscow--should reveal" style="--d:.1s">
+          <div class="moscow__label">SHOULD HAVE</div>
+          <ul>
+            <li>Predicción de precios con ML</li>
+            <li>Alertas de stock crítico</li>
+            <li>Dashboard analítico</li>
+          </ul>
+        </div>
+        <div class="moscow__col moscow--could reveal" style="--d:.2s">
+          <div class="moscow__label">COULD HAVE</div>
+          <ul>
+            <li>Integración WhatsApp Web</li>
+            <li>Carga masiva vía CSV</li>
+            <li>Exportación de reportes</li>
+          </ul>
+        </div>
+        <div class="moscow__col moscow--wont reveal" style="--d:.3s">
+          <div class="moscow__label">WON'T HAVE</div>
+          <ul>
+            <li>App móvil nativa</li>
+            <li>Pagos en línea</li>
+            <li>Integración con proveedores externos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS -->
+  <section class="tecnologias" id="tecnologias">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">04 / Tecnologías</span>
+        <h2 class="section__title">Stack Tecnológico</h2>
+        <p class="section__sub">Herramientas modernas seleccionadas para rendimiento, escalabilidad y accesibilidad económica.</p>
+      </div>
+      <div class="tech__grid">
+        <div class="tech__card reveal">
+          <div class="tech__layer">Frontend</div>
+          <div class="tech__items">
+            <span class="tech__pill">React.js</span>
+            <span class="tech__pill">HTML5</span>
+            <span class="tech__pill">CSS3</span>
+            <span class="tech__pill">Charts.js</span>
+          </div>
+        </div>
+        <div class="tech__card reveal" style="--d:.1s">
+          <div class="tech__layer">Backend</div>
+          <div class="tech__items">
+            <span class="tech__pill">Python</span>
+            <span class="tech__pill">Flask</span>
+            <span class="tech__pill">FastAPI</span>
+            <span class="tech__pill">PHP</span>
+          </div>
+        </div>
+        <div class="tech__card reveal" style="--d:.2s">
+          <div class="tech__layer">Inteligencia Artificial</div>
+          <div class="tech__items">
+            <span class="tech__pill">Scikit-Learn</span>
+            <span class="tech__pill">Pandas</span>
+            <span class="tech__pill">NumPy</span>
+            <span class="tech__pill">Pickle (.pkl)</span>
+          </div>
+        </div>
+        <div class="tech__card reveal" style="--d:.3s">
+          <div class="tech__layer">Base de Datos</div>
+          <div class="tech__items">
+            <span class="tech__pill">PostgreSQL</span>
+            <span class="tech__pill">SQL Views</span>
+            <span class="tech__pill">Triggers</span>
+            <span class="tech__pill">Backups</span>
+          </div>
+        </div>
+        <div class="tech__card reveal" style="--d:.4s">
+          <div class="tech__layer">Despliegue</div>
+          <div class="tech__items">
+            <span class="tech__pill">GitHub Pages</span>
+            <span class="tech__pill">GitHub Actions</span>
+            <span class="tech__pill">Apache</span>
+          </div>
+        </div>
+        <div class="tech__card reveal" style="--d:.5s">
+          <div class="tech__layer">Salida de Datos</div>
+          <div class="tech__items">
+            <span class="tech__pill">ReportLab PDF</span>
+            <span class="tech__pill">WhatsApp API</span>
+            <span class="tech__pill">CSV Export</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARQUITECTURA -->
+  <section class="arquitectura" id="arquitectura">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">05 / Arquitectura</span>
+        <h2 class="section__title">Arquitectura en Capas</h2>
+        <p class="section__sub">Separación de responsabilidades con un módulo de IA integrado en la capa de negocio.</p>
+      </div>
+      <div class="arq__diagram reveal">
+        <div class="arq__layer arq--front">
+          <div class="arq__layer-label">Capa de Presentación (Frontend)</div>
+          <div class="arq__layer-items">
+            <div class="arq__item">Interfaz Web React.js/HTML5</div>
+            <div class="arq__item">Dashboard Analítico</div>
+            <div class="arq__item">Formularios de Cotización</div>
+          </div>
+        </div>
+        <div class="arq__arrow">↓ Solicitudes HTTP / JSON</div>
+        <div class="arq__layer arq--back">
+          <div class="arq__layer-label">Capa de Negocio (Backend Python/Flask)</div>
+          <div class="arq__layer-items">
+            <div class="arq__item">Gestor de Inventarios</div>
+            <div class="arq__item">Controlador de Cotizaciones</div>
+            <div class="arq__item">Consulta de Tendencias</div>
+          </div>
+        </div>
+        <div class="arq__arrow">↓ Inferencia ML</div>
+        <div class="arq__layer arq--ia">
+          <div class="arq__layer-label">Módulo de Inteligencia Artificial (Transversal)</div>
+          <div class="arq__layer-items">
+            <div class="arq__item">Modelo Scikit-Learn (.pkl)</div>
+            <div class="arq__item">Procesador de Inferencia</div>
+            <div class="arq__item">Generador PDF</div>
+          </div>
+        </div>
+        <div class="arq__arrow">↓ Queries SQL</div>
+        <div class="arq__layer arq--data">
+          <div class="arq__layer-label">Capa de Datos (PostgreSQL)</div>
+          <div class="arq__layer-items">
+            <div class="arq__item">Tablas: USUARIO, PRODUCTO, COTIZACION</div>
+            <div class="arq__item">Dataset: HISTORIAL_PRECIOS</div>
+            <div class="arq__item">Modelos .pkl almacenados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">06 / Proyecto</span>
+        <h2 class="section__title">Información del Proyecto</h2>
+      </div>
+      <div class="contacto__grid">
+        <div class="contacto__info reveal">
+          <div class="info__row">
+            <span class="info__key">Estudiante</span>
+            <span class="info__val">Joel Matias Kenaut Ticona</span>
+          </div>
+          <div class="info__row">
+            <span class="info__key">Docente</span>
+            <span class="info__val">Javier Elvis Canqui Llusco</span>
+          </div>
+          <div class="info__row">
+            <span class="info__key">Materia</span>
+            <span class="info__val">Ingeniería de Sistemas (ISI-511)</span>
+          </div>
+          <div class="info__row">
+            <span class="info__key">Universidad</span>
+            <span class="info__val">Universidad Privada Franz Tamayo</span>
+          </div>
+          <div class="info__row">
+            <span class="info__key">Ciudad</span>
+            <span class="info__val">El Alto – Bolivia, 2026</span>
+          </div>
+          <div class="info__row">
+            <span class="info__key">Empresa Cliente</span>
+            <span class="info__val">Materiales de Construcción "Jerusalén"</span>
+          </div>
+        </div>
+        <div class="contacto__deploy reveal" style="--d:.2s">
+          <div class="deploy__title">🚀 Despliegue GitHub Pages</div>
+          <div class="deploy__steps">
+            <div class="deploy__step">
+              <span class="step__num">1</span>
+              <span>Crear repositorio público: <code>cotizacion-materiales-construccion</code></span>
+            </div>
+            <div class="deploy__step">
+              <span class="step__num">2</span>
+              <span>Subir: <code>index.html</code>, <code>styles.css</code>, <code>script.js</code></span>
+            </div>
+            <div class="deploy__step">
+              <span class="step__num">3</span>
+              <span>Settings → Pages → Branch: <code>main / (root)</code> → Save</span>
+            </div>
+            <div class="deploy__step">
+              <span class="step__num">4</span>
+              <span>URL activa en: <code>https://[usuario].github.io/cotizacion-materiales-construccion/</code></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="nav__icon">⬡</span>
+          <span>JERUSALÉN — Sistema Web de Cotización</span>
+        </div>
+        <div class="footer__meta">
+          ISI-511 · Hito 4 · Universidad Franz Tamayo · 2026
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
