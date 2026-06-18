@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jerusalén - Sistema de Cotización Inteligente</title>
+  <title>Jerusalén — Sistema de Cotización Inteligente</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 </head>
@@ -20,9 +20,10 @@
       <ul class="nav__links">
         <li><a href="#problema">Problema</a></li>
         <li><a href="#modulos">Módulos</a></li>
+        <li><a href="#cotizacion">Cotizar</a></li>
         <li><a href="#tecnologias">Tecnologías</a></li>
-        <li><a href="#arquitectura">Arquitectura</a></li>
-        <li><a href="#contacto" class="nav__cta">Ver Sistema</a></li>
+        <li><a href="#documentacion">Documentación</a></li>
+        <li><a href="#cotizacion" class="nav__cta">Iniciar Cotización</a></li>
       </ul>
       <button class="nav__burger" id="burger" aria-label="menú">
         <span></span><span></span><span></span>
@@ -41,7 +42,7 @@
     <div class="hero__content">
       <div class="hero__badge">
         <span class="badge__dot"></span>
-        Hito 4 — Sistema Desplegado en Producción
+        Hito 4 — Ingeniería &amp; Calidad · ISI-511
       </div>
       <h1 class="hero__title">
         Cotizaciones de<br />
@@ -54,8 +55,8 @@
         con Machine Learning en tiempo real.
       </p>
       <div class="hero__actions">
-        <a href="#modulos" class="btn btn--primary">Explorar Módulos</a>
-        <a href="#arquitectura" class="btn btn--ghost">Ver Arquitectura</a>
+        <a href="#cotizacion" class="btn btn--primary">🧾 Generar Cotización</a>
+        <a href="#documentacion" class="btn btn--ghost">📄 Ver Informe</a>
       </div>
       <div class="hero__stats">
         <div class="stat">
@@ -137,7 +138,6 @@
         <p class="section__sub">Cada módulo cubre un área crítica del negocio con tecnología de punta.</p>
       </div>
       <div class="modulos__grid">
-
         <div class="modulo reveal">
           <div class="modulo__num">MIA</div>
           <div class="modulo__header">
@@ -153,7 +153,6 @@
           </ul>
           <div class="modulo__tech">Python · Scikit-Learn</div>
         </div>
-
         <div class="modulo reveal" style="--d:.1s">
           <div class="modulo__num">MIG</div>
           <div class="modulo__header">
@@ -169,7 +168,6 @@
           </ul>
           <div class="modulo__tech">PostgreSQL · PHP</div>
         </div>
-
         <div class="modulo reveal" style="--d:.2s">
           <div class="modulo__num">MCC</div>
           <div class="modulo__header">
@@ -185,7 +183,6 @@
           </ul>
           <div class="modulo__tech">ReportLab · WhatsApp API</div>
         </div>
-
         <div class="modulo reveal" style="--d:.3s">
           <div class="modulo__num">MASS</div>
           <div class="modulo__header">
@@ -201,52 +198,265 @@
           </ul>
           <div class="modulo__tech">JWT · bcrypt · PostgreSQL</div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- REQUISITOS -->
-  <section class="requisitos" id="requisitos">
+  <!-- ══════════════════════════════════════════
+       FORMULARIO DE COTIZACIÓN — mapeado al DER
+       Caso de Uso: CU-03 Formalizar Cotización
+       Entidades: USUARIO + PRODUCTO + COTIZACION
+  ══════════════════════════════════════════ -->
+  <section class="cotizacion" id="cotizacion">
     <div class="container">
       <div class="section__header">
-        <span class="section__label">03 / Requisitos</span>
-        <h2 class="section__title">Matriz MoSCoW</h2>
-        <p class="section__sub">Priorización del MVP del sistema basada en valor de negocio.</p>
+        <span class="section__label">03 / CU-03 · Cotización</span>
+        <h2 class="section__title">Generar Cotización de Materiales</h2>
+        <p class="section__sub">
+          Cada campo de este formulario está mapeado directamente a una entidad del
+          Diagrama Entidad-Relación del sistema.
+        </p>
       </div>
-      <div class="moscow__grid">
-        <div class="moscow__col moscow--must reveal">
-          <div class="moscow__label">MUST HAVE</div>
-          <ul>
-            <li>Autenticación con roles ADMIN/VEN</li>
-            <li>Gestión CRUD de inventario</li>
-            <li>Generación de cotización PDF</li>
-          </ul>
+
+      <!-- Mapa DER visible -->
+      <div class="der__map reveal">
+        <div class="der__entity">
+          <span class="der__etag">USUARIO</span>
+          <span class="der__efield">nombre_completo</span>
+          <span class="der__efield">correo_electronico</span>
+          <span class="der__efield">telefono</span>
         </div>
-        <div class="moscow__col moscow--should reveal" style="--d:.1s">
-          <div class="moscow__label">SHOULD HAVE</div>
-          <ul>
-            <li>Predicción de precios con ML</li>
-            <li>Alertas de stock crítico</li>
-            <li>Dashboard analítico</li>
-          </ul>
+        <div class="der__arrow">→</div>
+        <div class="der__entity der__entity--main">
+          <span class="der__etag">COTIZACION</span>
+          <span class="der__efield">id_cotizacion (PK · Auto)</span>
+          <span class="der__efield">fecha_emision</span>
+          <span class="der__efield">total_calculado</span>
         </div>
-        <div class="moscow__col moscow--could reveal" style="--d:.2s">
-          <div class="moscow__label">COULD HAVE</div>
-          <ul>
-            <li>Integración WhatsApp Web</li>
-            <li>Carga masiva vía CSV</li>
-            <li>Exportación de reportes</li>
-          </ul>
+        <div class="der__arrow">→</div>
+        <div class="der__entity">
+          <span class="der__etag">DETALLE_COTIZACION</span>
+          <span class="der__efield">id_producto (FK)</span>
+          <span class="der__efield">cantidad</span>
+          <span class="der__efield">precio_unitario</span>
         </div>
-        <div class="moscow__col moscow--wont reveal" style="--d:.3s">
-          <div class="moscow__label">WON'T HAVE</div>
-          <ul>
-            <li>App móvil nativa</li>
-            <li>Pagos en línea</li>
-            <li>Integración con proveedores externos</li>
-          </ul>
+      </div>
+
+      <div class="form__wrapper reveal" style="--d:.2s">
+        <div class="form__header">
+          <span class="form__badge">CU-03 · Formalizar Cotización</span>
+          <span class="form__status" id="formStatus">● En espera</span>
         </div>
+
+        <form class="cotizacion__form" id="cotizacionForm" novalidate>
+
+          <!-- BLOQUE 1: USUARIO -->
+          <fieldset class="form__block">
+            <legend class="form__block-title">
+              <span class="block__icon">👤</span>
+              Datos del Cliente
+              <span class="block__entity">→ Tabla: USUARIO</span>
+            </legend>
+            <div class="form__row">
+              <div class="form__field">
+                <label for="nombre_completo">
+                  Nombre Completo
+                  <span class="field__map">nombre_completo · Varchar(150)</span>
+                </label>
+                <input type="text" id="nombre_completo" name="nombre_completo"
+                  placeholder="Ej: Juan Carlos Mamani Quispe"
+                  required minlength="3" />
+                <span class="field__error"></span>
+              </div>
+              <div class="form__field">
+                <label for="correo_electronico">
+                  Correo Electrónico
+                  <span class="field__map">correo_electronico · Varchar(100) · UNIQUE</span>
+                </label>
+                <input type="email" id="correo_electronico" name="correo_electronico"
+                  placeholder="ejemplo@correo.com"
+                  required />
+                <span class="field__error"></span>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <label for="telefono">
+                  Teléfono / WhatsApp
+                  <span class="field__map">telefono · Varchar(20)</span>
+                </label>
+                <input type="tel" id="telefono" name="telefono"
+                  placeholder="Ej: 79123456"
+                  required pattern="[0-9]{7,12}" />
+                <span class="field__error"></span>
+              </div>
+              <div class="form__field">
+                <label for="tipo_obra">
+                  Tipo de Obra
+                  <span class="field__map">descripcion_cotizacion · Varchar(200)</span>
+                </label>
+                <select id="tipo_obra" name="tipo_obra" required>
+                  <option value="">— Seleccionar tipo —</option>
+                  <option value="vivienda">Vivienda Unifamiliar</option>
+                  <option value="edificio">Edificio Multifamiliar</option>
+                  <option value="comercial">Local Comercial</option>
+                  <option value="remodelacion">Remodelación / Ampliación</option>
+                  <option value="obra_civil">Obra Civil</option>
+                </select>
+                <span class="field__error"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- BLOQUE 2: DETALLE_COTIZACION -->
+          <fieldset class="form__block">
+            <legend class="form__block-title">
+              <span class="block__icon">🧱</span>
+              Materiales Solicitados
+              <span class="block__entity">→ Tabla: DETALLE_COTIZACION + PRODUCTO</span>
+            </legend>
+
+            <div id="itemsContainer">
+              <!-- Item 1 -->
+              <div class="item__row" data-item="1">
+                <div class="form__field">
+                  <label>
+                    Material
+                    <span class="field__map">PRODUCTO.nombre_mat · FK id_producto</span>
+                  </label>
+                  <select class="item__material" name="material_1" required>
+                    <option value="">— Seleccionar material —</option>
+                    <optgroup label="Cementos">
+                      <option value="cemento_yura_50kg" data-price="55">Cemento Yura 50kg · Bs. 55</option>
+                      <option value="cemento_fancesa_50kg" data-price="53">Cemento Fancesa 50kg · Bs. 53</option>
+                    </optgroup>
+                    <optgroup label="Fierros">
+                      <option value="fierro_8mm" data-price="42">Fierro corrugado 8mm (vara) · Bs. 42</option>
+                      <option value="fierro_12mm" data-price="85">Fierro corrugado 12mm (vara) · Bs. 85</option>
+                      <option value="fierro_16mm" data-price="145">Fierro corrugado 16mm (vara) · Bs. 145</option>
+                    </optgroup>
+                    <optgroup label="Áridos">
+                      <option value="arena_gruesa" data-price="120">Arena gruesa (m³) · Bs. 120</option>
+                      <option value="grava_3_4" data-price="135">Grava 3/4" (m³) · Bs. 135</option>
+                    </optgroup>
+                    <optgroup label="Acabados">
+                      <option value="ceramica_piso" data-price="38">Cerámica piso 40x40 (m²) · Bs. 38</option>
+                      <option value="pintura_latex" data-price="95">Pintura látex (cubo 4L) · Bs. 95</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="form__field form__field--sm">
+                  <label>
+                    Cantidad
+                    <span class="field__map">cantidad · Int · Check &gt; 0</span>
+                  </label>
+                  <input type="number" class="item__qty" name="cantidad_1"
+                    min="1" value="1" required />
+                </div>
+                <div class="form__field form__field--sm">
+                  <label>
+                    P. Unitario (Bs.)
+                    <span class="field__map">precio_unitario · Numeric(12,2)</span>
+                  </label>
+                  <input type="text" class="item__price" readonly placeholder="Auto" />
+                </div>
+                <div class="form__field form__field--sm">
+                  <label>Subtotal</label>
+                  <input type="text" class="item__sub" readonly placeholder="Bs. 0.00" />
+                </div>
+                <button type="button" class="item__remove" onclick="removeItem(this)" title="Eliminar">✕</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn__add-item" id="addItem">
+              + Agregar otro material
+            </button>
+
+            <!-- Totales -->
+            <div class="totales">
+              <div class="total__row">
+                <span>Subtotal:</span>
+                <span id="totalSub">Bs. 0.00</span>
+              </div>
+              <div class="total__row">
+                <span>IVA (13%):</span>
+                <span id="totalIva">Bs. 0.00</span>
+              </div>
+              <div class="total__row total__row--main">
+                <span>TOTAL COTIZACIÓN:</span>
+                <span id="totalFinal">Bs. 0.00</span>
+              </div>
+              <div class="total__note">
+                <span class="field__map">total_calculado · Numeric(12,2) → Tabla COTIZACION</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- BLOQUE 3: COTIZACION cabecera -->
+          <fieldset class="form__block">
+            <legend class="form__block-title">
+              <span class="block__icon">📋</span>
+              Datos de la Cotización
+              <span class="block__entity">→ Tabla: COTIZACION</span>
+            </legend>
+            <div class="form__row">
+              <div class="form__field">
+                <label for="fecha_emision">
+                  Fecha de Emisión
+                  <span class="field__map">fecha_emision · Date · NOT NULL</span>
+                </label>
+                <input type="date" id="fecha_emision" name="fecha_emision" required />
+              </div>
+              <div class="form__field">
+                <label for="plazo_entrega">
+                  Plazo de Entrega
+                  <span class="field__map">plazo_entrega · Varchar(50)</span>
+                </label>
+                <select id="plazo_entrega" name="plazo_entrega">
+                  <option value="inmediato">Inmediato (retiro en tienda)</option>
+                  <option value="24h">24 horas</option>
+                  <option value="48h">48 horas</option>
+                  <option value="coordinar">A coordinar</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__field">
+              <label for="notas">
+                Notas adicionales
+                <span class="field__map">observaciones · Text · NULLABLE</span>
+              </label>
+              <textarea id="notas" name="notas" rows="3"
+                placeholder="Ej: Necesito entrega en zona Norte, puerta 3..."></textarea>
+            </div>
+          </fieldset>
+
+          <div class="form__submit">
+            <button type="submit" class="btn btn--submit" id="submitBtn">
+              🧾 Generar Cotización Formal
+            </button>
+            <p class="form__disclaimer">
+              Los datos simulan una inserción en la base de datos PostgreSQL del sistema.
+              La cotización real se genera con firma digital y exportación PDF desde el backend.
+            </p>
+          </div>
+        </form>
+
+        <!-- Resultado / Ticket -->
+        <div class="cotizacion__result" id="cotizacionResult" style="display:none">
+          <div class="result__header">
+            <span class="result__icon">✅</span>
+            <h3>¡Cotización Registrada!</h3>
+            <span class="result__id" id="resultId"></span>
+          </div>
+          <div class="result__body" id="resultBody"></div>
+          <div class="result__actions">
+            <button class="btn btn--ghost" onclick="resetForm()">Nueva Cotización</button>
+            <a class="btn btn--primary" id="whatsappBtn" href="#" target="_blank">
+              📲 Enviar por WhatsApp
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -364,62 +574,131 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="contacto" id="contacto">
+  <!-- ══════════════════════════════════════════
+       DOCUMENTACIÓN — Sección PDF
+  ══════════════════════════════════════════ -->
+  <section class="documentacion" id="documentacion">
     <div class="container">
       <div class="section__header">
-        <span class="section__label">06 / Proyecto</span>
-        <h2 class="section__title">Información del Proyecto</h2>
+        <span class="section__label">06 / Documentación</span>
+        <h2 class="section__title">Informe Técnico del Proyecto</h2>
+        <p class="section__sub">
+          Documento formal con los 3 capítulos de ingeniería: Marco Introductorio,
+          Marco Teórico y Marco de Desarrollo.
+        </p>
       </div>
-      <div class="contacto__grid">
-        <div class="contacto__info reveal">
-          <div class="info__row">
-            <span class="info__key">Estudiante</span>
-            <span class="info__val">Joel Matias Kenaut Ticona</span>
+
+      <div class="doc__grid">
+
+        <!-- Tarjeta del documento -->
+        <div class="doc__card reveal">
+          <div class="doc__preview">
+            <div class="doc__icon-big">📘</div>
+            <div class="doc__meta">
+              <span class="doc__title-text">Informe Consolidado — Hito 4</span>
+              <span class="doc__subtitle">Sistema de Cotización con Machine Learning</span>
+              <div class="doc__tags">
+                <span class="doc__tag">Cap. 1: Introductorio</span>
+                <span class="doc__tag">Cap. 2: Teórico</span>
+                <span class="doc__tag">Cap. 3: Desarrollo</span>
+              </div>
+            </div>
           </div>
-          <div class="info__row">
-            <span class="info__key">Docente</span>
-            <span class="info__val">Javier Elvis Canqui Llusco</span>
+          <div class="doc__info">
+            <div class="doc__row"><span>Autor</span><span>Joel Matias Kenaut Ticona</span></div>
+            <div class="doc__row"><span>Docente</span><span>Javier Elvis Canqui Llusco</span></div>
+            <div class="doc__row"><span>Materia</span><span>ISI-511 · Ingeniería de Sistemas</span></div>
+            <div class="doc__row"><span>Universidad</span><span>U.P. Franz Tamayo — 2026</span></div>
+            <div class="doc__row"><span>Formato</span><span>PDF · Normas APA</span></div>
           </div>
-          <div class="info__row">
-            <span class="info__key">Materia</span>
-            <span class="info__val">Ingeniería de Sistemas (ISI-511)</span>
+          <div class="doc__actions">
+            <a href="informe-hito4.pdf" class="btn btn--primary" target="_blank" download>
+              ⬇ Descargar PDF
+            </a>
+            <a href="informe-hito4.pdf" class="btn btn--ghost" target="_blank">
+              👁 Ver en línea
+            </a>
           </div>
-          <div class="info__row">
-            <span class="info__key">Universidad</span>
-            <span class="info__val">Universidad Privada Franz Tamayo</span>
-          </div>
-          <div class="info__row">
-            <span class="info__key">Ciudad</span>
-            <span class="info__val">El Alto – Bolivia, 2026</span>
-          </div>
-          <div class="info__row">
-            <span class="info__key">Empresa Cliente</span>
-            <span class="info__val">Materiales de Construcción "Jerusalén"</span>
+          <div class="doc__note">
+            ⚠️ Para ver el PDF, sube el archivo <code>informe-hito4.pdf</code>
+            al repositorio de GitHub junto con los demás archivos.
           </div>
         </div>
-        <div class="contacto__deploy reveal" style="--d:.2s">
-          <div class="deploy__title">🚀 Despliegue GitHub Pages</div>
-          <div class="deploy__steps">
-            <div class="deploy__step">
-              <span class="step__num">1</span>
-              <span>Crear repositorio público: <code>cotizacion-materiales-construccion</code></span>
+
+        <!-- Índice de contenidos -->
+        <div class="doc__index reveal" style="--d:.2s">
+          <div class="index__title">📋 Contenido del Informe</div>
+          <div class="index__chapter">
+            <div class="index__ch-header">
+              <span class="index__num">01</span>
+              <span class="index__name">Marco Introductorio</span>
             </div>
-            <div class="deploy__step">
-              <span class="step__num">2</span>
-              <span>Subir: <code>index.html</code>, <code>styles.css</code>, <code>script.js</code></span>
+            <ul class="index__items">
+              <li>1.1 Introducción al sector tecnológico</li>
+              <li>1.2 Planteamiento del Problema</li>
+              <li>1.3 Objetivo General y Específicos</li>
+              <li>1.4 Justificaciones (técnica, económica, social)</li>
+            </ul>
+          </div>
+          <div class="index__chapter">
+            <div class="index__ch-header">
+              <span class="index__num">02</span>
+              <span class="index__name">Marco Teórico</span>
             </div>
-            <div class="deploy__step">
-              <span class="step__num">3</span>
-              <span>Settings → Pages → Branch: <code>main / (root)</code> → Save</span>
+            <ul class="index__items">
+              <li>2.1 Taxonomía según Pressman/Sommerville</li>
+              <li>2.2 Metodologías ágiles · UML · DER</li>
+              <li>2.3 Glosario del sector construcción</li>
+            </ul>
+          </div>
+          <div class="index__chapter">
+            <div class="index__ch-header">
+              <span class="index__num">03</span>
+              <span class="index__name">Marco de Desarrollo</span>
             </div>
-            <div class="deploy__step">
-              <span class="step__num">4</span>
-              <span>URL activa en: <code>https://[usuario].github.io/cotizacion-materiales-construccion/</code></span>
+            <ul class="index__items">
+              <li>3.1 Requisitos funcionales y no funcionales</li>
+              <li>3.2 Matriz MoSCoW · RTM</li>
+              <li>3.3 Diagramas UML · DER · Diccionario</li>
+              <li>3.4 Arquitectura en capas · Wireframes</li>
+            </ul>
+          </div>
+          <div class="index__chapter">
+            <div class="index__ch-header">
+              <span class="index__num">04</span>
+              <span class="index__name">Despliegue GitHub Pages</span>
             </div>
+            <ul class="index__items">
+              <li>4.1 Estructura del repositorio</li>
+              <li>4.2 Guía paso a paso de publicación</li>
+              <li>4.3 URL de producción</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Links del proyecto -->
+      <div class="proyecto__links reveal" style="--d:.3s">
+        <div class="links__title">🔗 Enlaces del Proyecto</div>
+        <div class="links__grid">
+          <div class="link__item">
+            <span class="link__label">🌐 Landing Page (Producción)</span>
+            <a href="https://matitic.github.io/cotizacion-materiales-construccion/"
+               target="_blank" class="link__url">
+              https://matitic.github.io/cotizacion-materiales-construccion/
+            </a>
+          </div>
+          <div class="link__item">
+            <span class="link__label">📦 Repositorio GitHub</span>
+            <a href="https://github.com/matitic/cotizacion-materiales-construccion"
+               target="_blank" class="link__url">
+              https://github.com/matitic/cotizacion-materiales-construccion
+            </a>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -429,10 +708,10 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <span class="nav__icon">⬡</span>
-          <span>JERUSALÉN — Sistema Web de Cotización</span>
+          <span>JERUSALÉN — Sistema Web de Cotización Inteligente</span>
         </div>
         <div class="footer__meta">
-          ISI-511 · Hito 4 · Universidad Franz Tamayo · 2026
+          ISI-511 · Hito 4 · Universidad Franz Tamayo · El Alto, Bolivia · 2026
         </div>
       </div>
     </div>
