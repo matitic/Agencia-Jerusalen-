@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════
    SCRIPT.JS — Sistema Jerusalén
-   Hito 4 | ISI-511 | Joel Kenaut
+   Hito 5 | ISI-511 | Joel Kenaut
 ══════════════════════════════════════ */
 
 // ── NAV scroll effect ──────────────────
@@ -216,7 +216,7 @@ document.querySelectorAll('.modulo').forEach(card => {
 
 // ── Console message ───────────────────
 console.log('%c🏗 SISTEMA JERUSALÉN', 'color:#e8a422;font-size:20px;font-weight:900');
-console.log('%cHito 4 | ISI-511 | Joel Matias Kenaut Ticona', 'color:#9ca3af;font-size:12px');
+console.log('%cHito 5 | ISI-511 | Joel Matias Kenaut Ticona', 'color:#9ca3af;font-size:12px');
 console.log('%cUniversidad Franz Tamayo — El Alto, Bolivia 2026', 'color:#6b7280;font-size:11px');
 
 /* ══════════════════════════════════════
